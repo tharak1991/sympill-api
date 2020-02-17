@@ -9,6 +9,19 @@ var cors = require('cors');
 var request = require('request');
 var multer = require('multer');
 const morgan = require('morgan');
+const AWS = require('aws-sdk');
+const fs = require('fs');
+
+const ID = 'AKIAJXEFJNBCEVBEV7HA';
+const SECRET = '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';
+
+// The name of the bucket that you have created
+const BUCKET_NAME = 'test-bucket';
+
+const s3 = new AWS.S3({
+    accessKeyId: ID,
+    secretAccessKey: SECRET
+});
 
 // upload file path
 const FILE_PATH = 'uploads';

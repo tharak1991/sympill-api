@@ -13,5 +13,6 @@ router.post('/add', user_cntrl.addUser);
 router.post('/add2', user_cntrl.addUser2);
 // router.post('/upload-photos', upload.array('photos', 8), medicinequery_cntrl.addMedicineQuery);
 router.post('/upload-photos', medicinequery_cntrl.addMedicineQuery);
+router.post('/s3', medicinequery_cntrl.uploadFile);
 
 module.exports = router ;
