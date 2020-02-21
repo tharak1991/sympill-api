@@ -4,11 +4,11 @@ var bcrypt = require('bcrypt-nodejs');
 
 var MerchantSchema = new Schema({
     name: String,
-    email: { type: String, required: true, unique: true },
+    email: { type: String, unique: true },
     password: { type: String, required: true },
     url: String,
     admin_name: String,
-    mobile: { type: Number },
+    mobile: { type: Number,required: true, unique:true },
     _meta: {
         created_time: Date,
         updated_time: Date,
