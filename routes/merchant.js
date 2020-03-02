@@ -4,6 +4,8 @@ var base64 = require('base-64');
 var express = require('express');
 var router = express.Router();
 
+var merchantSignup = require('../controllers/signup')
+var merchantSignin = require('../controllers/signin')
 var signup = require('./signup');
 var signin = require('./signin');
 var dashboard = require('./dashboard');
@@ -13,8 +15,8 @@ var milestone = require('./milestone');
 var survey = require('./survey');
 var customerBill = require('./customerbills');
 
-router.post('/signup', signup.postSignup);
-router.post('/signin', signin.postSignin);
+router.post('/signup', merchantSignup.signup);
+router.post('/signin', merchantSignin.signin);
 router.post('/signinStore', signin.postSigninStore);
 router.get('/dashboard', passport.authenticate('merchant', { session: false }), dashboard.getDashboard);
 router.post('/addStore', passport.authenticate('merchant', { session: false }), store.addStore);
